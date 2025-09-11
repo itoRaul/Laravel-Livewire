@@ -14,6 +14,16 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip
 
+# Instala dependências para adicionar o repositório do Node.js
+RUN apt-get update && apt-get install -y gnupg curl
+
+# Adiciona o repositório do Node.js v18.x (uma versão LTS estável)
+# Você pode mudar para setup_20.x se preferir uma mais nova
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+
+# Instala o Node.js (que inclui o npm)
+RUN apt-get install -y nodejs
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
