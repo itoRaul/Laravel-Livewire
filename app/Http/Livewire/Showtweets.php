@@ -18,7 +18,7 @@ class Showtweets extends Component
 
     public function render(){
 
-        $tweets = Tweet::with('user')->latest()->paginate(10);//dessa forma é mais otimizado, usando o with
+        $tweets = Tweet::with('user')->latest()->paginate(5);//dessa forma é mais otimizado, usando o with
 
         return view('livewire.showtweets', compact('tweets'));
     }

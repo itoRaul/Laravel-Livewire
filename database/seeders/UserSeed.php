@@ -14,6 +14,7 @@ class UserSeed extends Seeder
      */
     public function run()
     {
+        //no terminal: php artisan make:seeder UserSeed
         User::factory(10)->create();//Cria 10 usuários e adiciona na tabela users
     }
 }
