@@ -6,7 +6,7 @@
         <input type="file" wire:model="photo">
         <br>
         @error('photo')
-            <span style="color: red">{{ $message }}</span>
+        <span style="color: red">{{ $message }}</span>
         @enderror
         <br>
         <button type="submit">Upload Foto</button>
